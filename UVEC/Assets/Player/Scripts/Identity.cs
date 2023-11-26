@@ -54,11 +54,11 @@ public class Identity : NetworkBehaviour
                 break;
             case "P2":
                 gameObject.layer = LayerMask.NameToLayer("GreenPlayer");
-                _camera.cullingMask = (1 << _redLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
+                _camera.cullingMask = (1 << _blueLayer) | (1 << _redLayer) | (1 << _defaultLayer);
                 break;
             case "P3":
                 gameObject.layer = LayerMask.NameToLayer("BluePlayer");
-                _camera.cullingMask = (1 << _blueLayer) | (1 << _redLayer) | (1 << _defaultLayer);
+                _camera.cullingMask = (1 << _redLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
                 break;
         }
         
