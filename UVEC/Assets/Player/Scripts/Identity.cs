@@ -11,6 +11,8 @@ public class Identity : NetworkBehaviour
 
     public GameObject camPrefab;
 
+    private Camera _camera;
+    
     public override void Spawned()
     {
         if(!HasInputAuthority)
@@ -18,7 +20,7 @@ public class Identity : NetworkBehaviour
         var c = Instantiate(camPrefab, new Vector3(transform.position.x, transform.position.y + 0.95f, transform.position.z),
             Quaternion.identity);
         c.transform.parent = transform;
-        GetComponent<TestPlayerController>()._camera = c.GetComponent<Camera>();
+        GetComponent<TestPlayerController>()._camera = _camera = c.GetComponent<Camera>();
     }
 
     public void OnEnable()
@@ -39,6 +41,25 @@ public class Identity : NetworkBehaviour
             return;
         
         gameObject.tag = other.gameObject.tag;
+        int _defaultLayer = LayerMask.NameToLayer("Default");
+        int _redLayer = LayerMask.NameToLayer("RedPlayer");
+        int _blueLayer = LayerMask.NameToLayer("BluePlayer");
+        int _greenLayer = LayerMask.NameToLayer("GreenPlayer");
+        
+        switch (gameObject.tag)
+        {
+            case "p1":
+                _camera.cullingMask = (1 << _blueLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
+                break;
+            case "p2":
+                _camera.cullingMask = (1 << _redLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
+                break;
+            case "p3":
+                _camera.cullingMask = (1 << _blueLayer) | (1 << _redLayer) | (1 << _defaultLayer);
+                break;
+        }
+        
+        
         NetworkedColor = other.gameObject.GetComponent<MeshRenderer>().material.color;
         ready = true;
         GameState.Instance.CheckAllReady();
