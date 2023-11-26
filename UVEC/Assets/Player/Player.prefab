@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   _speed: 10
-  _rotateSpeed: 50
+  _rotateSpeed: 200
   _lookUpDownSpeed: 20
   _camera: {fileID: 0}
   camUpMax: 130
