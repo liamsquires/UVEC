@@ -35,7 +35,7 @@ public class LobbyWatcher : NetworkBehaviour
         if (Runner.ActivePlayers.Count() != 3)
             return;
         
-        if(SceneManager.GetActiveScene().name!= "LobbyScene")
+        if(SceneManager.GetActiveScene().name!= "Prototype")
             return;
 
         int i = 0;

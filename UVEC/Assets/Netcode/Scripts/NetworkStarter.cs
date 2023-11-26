@@ -54,6 +54,6 @@ public class NetworkStarter: Fusion.Behaviour
         }
         
         LoadingText.gameObject.SetActive(false);
-        SceneManager.LoadScene("LobbyScene");
+        SceneManager.LoadScene("Prototype");
     }
 }

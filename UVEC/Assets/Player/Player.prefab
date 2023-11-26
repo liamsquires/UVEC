@@ -62,6 +62,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 597550369841635029}
   - {fileID: 1355517705838942703}
+  - {fileID: 3740318990971613207}
   SimulationBehaviours: []
 --- !u!114 &597550369841635029
 MonoBehaviour:
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24c6e29ab0437e42bed9aa057dbddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   _speed: 10
   _rotateSpeed: 50
   _lookUpDownSpeed: 20

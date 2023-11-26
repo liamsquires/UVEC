@@ -20,10 +20,10 @@ public class PlayerSpawner : SimulationBehaviour, INetworkRunnerCallbacks
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
-        if (SceneManager.GetActiveScene().name != "LobbyScene")
+        if (SceneManager.GetActiveScene().name != "Prototype")
             return;
         
-        var pObj = Runner.Spawn(PlayerPrefab, new Vector3(0,35,0), Quaternion.identity, inputAuthority:Runner.LocalPlayer);
+        var pObj = Runner.Spawn(PlayerPrefab, new Vector3(0,5,0), Quaternion.identity, inputAuthority:Runner.LocalPlayer);
         Runner.SetPlayerObject(Runner.LocalPlayer, pObj);
         GameState.Instance.Players[Runner.LocalPlayer] = pObj;
         //GameState.Instance.PlayersReady[Runner.LocalPlayer] = false;
