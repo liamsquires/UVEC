@@ -51,6 +51,9 @@ public class GameState
         }
         
         GameObject.FindWithTag("Floor").SetActive(false);
+        
+        SceneManager.LoadScene("Prototype",LoadSceneMode.Additive);
+        
     }
 
     #endregion

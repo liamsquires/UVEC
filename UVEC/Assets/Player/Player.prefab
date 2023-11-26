@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9051947915539819122}
   - component: {fileID: 597550369841635029}
   - component: {fileID: 1355517705838942703}
-  - component: {fileID: 434935422586942432}
   - component: {fileID: 40343684685056656}
   - component: {fileID: 1091013662788946742}
+  - component: {fileID: 3740318990971613207}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -62,8 +62,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 597550369841635029}
   - {fileID: 1355517705838942703}
-  SimulationBehaviours:
-  - {fileID: 434935422586942432}
+  SimulationBehaviours: []
 --- !u!114 &597550369841635029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,20 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  ready: 0
   MeshRenderer: {fileID: 4554270652555632774}
   _NetworkedColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &434935422586942432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5762324330127576080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3604eb0d51a7a43816c437c04ac743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  camPrefab: {fileID: 2360256582550831317, guid: 511f8d41e56ef3b49863b3d7a8da9c4b, type: 3}
 --- !u!54 &40343684685056656
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,6 +158,24 @@ CapsuleCollider:
   m_Height: 2.02
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3740318990971613207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5762324330127576080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24c6e29ab0437e42bed9aa057dbddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _rotateSpeed: 50
+  _lookUpDownSpeed: 20
+  _camera: {fileID: 0}
+  camUpMax: 130
+  camDownMax: 70
 --- !u!1 &7394774679819417279
 GameObject:
   m_ObjectHideFlags: 0

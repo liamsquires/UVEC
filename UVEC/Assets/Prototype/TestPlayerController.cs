@@ -5,7 +5,7 @@ public class TestPlayerController : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotateSpeed = 50f;
     [SerializeField] private float _lookUpDownSpeed = 20f;
-    [SerializeField] private Camera _camera;
+     public Camera _camera;
     [SerializeField] private float camUpMax = 130f;
     [SerializeField] private float camDownMax = 70f;
     

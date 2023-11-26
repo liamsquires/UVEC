@@ -8,7 +8,25 @@ public class Identity : NetworkBehaviour
     public MeshRenderer MeshRenderer;
     [Networked(OnChanged = nameof(NetworkedColorChanged))]
     public Color NetworkedColor { get; set; }
-    
+
+    public GameObject camPrefab;
+
+    public override void Spawned()
+    {
+        if(!HasInputAuthority)
+            return;
+        var c = Instantiate(camPrefab, new Vector3(transform.position.x, transform.position.y + 0.95f, transform.position.z),
+            Quaternion.identity);
+        c.transform.parent = transform;
+        GetComponent<TestPlayerController>()._camera = c.GetComponent<Camera>();
+    }
+
+    public void OnEnable()
+    {
+        // if (Runner.)
+        //     return;
+
+    }
     private static void NetworkedColorChanged(Changed<Identity> changed)
     {
         changed.Behaviour.MeshRenderer.material.color = changed.Behaviour.NetworkedColor;
