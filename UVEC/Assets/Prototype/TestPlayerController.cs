@@ -1,3 +1,4 @@
+using System;
 using Fusion;
 using UnityEngine;
 
@@ -43,5 +44,13 @@ public class TestPlayerController : NetworkBehaviour
 
         transform.Rotate(0f, Input.GetAxis("Mouse X") * _rotateSpeed * Time.deltaTime, 0f);
         _camera.transform.Rotate(-Input.GetAxis("Mouse Y") * _lookUpDownSpeed * Time.deltaTime, 0f, 0f);
+    }
+    
+    public Action<TestPlayerController> Died;
+    
+    public void Die()
+    {
+        Debug.Log("Death awaits even the slightest lapse in concentration.");
+        Died?.Invoke(this);
     }
 }

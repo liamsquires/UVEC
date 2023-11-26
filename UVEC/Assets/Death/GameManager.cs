@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public List<PlayerController> Players;
+	public List<TestPlayerController> Players;
 
-	private List<PlayerController> _deadPlayers;
+	private List<TestPlayerController> _deadPlayers;
 
 	private void OnEnable()
 	{
-		_deadPlayers = new List<PlayerController>();
+		_deadPlayers = new List<TestPlayerController>();
 		Debug.Log("OnEnable");
-		foreach (PlayerController player in Players)
+		foreach (TestPlayerController player in Players)
 		{
 			Debug.Log("Registering Event");
 			player.Died += PlayerDied;
@@ -20,13 +20,13 @@ public class GameManager : MonoBehaviour
 
 	private void OnDisable()
 	{
-		foreach (PlayerController player in Players)
+		foreach (TestPlayerController player in Players)
 		{
 			player.Died -= PlayerDied;
 		}
 	}
 
-	private void PlayerDied(PlayerController obj)
+	private void PlayerDied(TestPlayerController obj)
 	{
 		Debug.Log(obj);
 		if(!_deadPlayers.Contains(obj))

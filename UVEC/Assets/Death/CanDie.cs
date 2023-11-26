@@ -1,15 +1,15 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(TestPlayerController))]
 public class CanDie : MonoBehaviour
 {
-    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private TestPlayerController _testPlayerController;
 
     private void Start()
     {
-        if (_playerController == null)
+        if (_testPlayerController == null)
         {
-            _playerController = GetComponent<PlayerController>();
+            _testPlayerController = GetComponent<TestPlayerController>();
         }
     }
 
@@ -17,7 +17,7 @@ public class CanDie : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathBox"))
         {
-            _playerController.Die();
+            _testPlayerController.Die();
         }
     }
 }
