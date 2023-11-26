@@ -1,6 +1,7 @@
+using Fusion;
 using UnityEngine;
 
-public class TestPlayerController : MonoBehaviour
+public class TestPlayerController : NetworkBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotateSpeed = 50f;
@@ -19,6 +20,9 @@ public class TestPlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!HasInputAuthority)
+            return;
+        
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * Time.deltaTime * _speed;
