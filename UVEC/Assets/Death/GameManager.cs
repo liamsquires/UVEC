@@ -36,4 +36,19 @@ public class GameManager : MonoBehaviour
 			Debug.Log("Everyone died");
 		}
 	}
+
+	public void QuitApplication()
+	{
+		Application.Quit();
+	}
+
+	public void ReturnToMainMenu()
+	{
+		
+	}
+
+	public void RestartGame()
+	{
+		
+	}
 }
