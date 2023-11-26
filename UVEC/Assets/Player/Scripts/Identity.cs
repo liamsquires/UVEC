@@ -36,9 +36,9 @@ public class Identity : NetworkBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        //this is a hack to only collide with pads
-        if (!other.gameObject.name.StartsWith("Pad"))
-            return;
+        // //this is a hack to only collide with pads
+        // if (!other.gameObject.name.StartsWith("Pad"))
+        //     return;
         
         gameObject.tag = other.gameObject.tag;
         int _defaultLayer = LayerMask.NameToLayer("Default");
@@ -48,13 +48,16 @@ public class Identity : NetworkBehaviour
         
         switch (gameObject.tag)
         {
-            case "p1":
+            case "P1":
+                gameObject.layer = LayerMask.NameToLayer("RedPlayer");
                 _camera.cullingMask = (1 << _blueLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
                 break;
-            case "p2":
+            case "P2":
+                gameObject.layer = LayerMask.NameToLayer("GreenPlayer");
                 _camera.cullingMask = (1 << _redLayer) | (1 << _greenLayer) | (1 << _defaultLayer);
                 break;
-            case "p3":
+            case "P3":
+                gameObject.layer = LayerMask.NameToLayer("BluePlayer");
                 _camera.cullingMask = (1 << _blueLayer) | (1 << _redLayer) | (1 << _defaultLayer);
                 break;
         }
