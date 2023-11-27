@@ -17,6 +17,7 @@ public class Identity : NetworkBehaviour
     {
         if(!HasInputAuthority)
             return;
+        
         var c = Instantiate(camPrefab, new Vector3(transform.position.x, transform.position.y + 0.95f, transform.position.z),
             Quaternion.identity);
         c.transform.parent = transform;
@@ -36,6 +37,11 @@ public class Identity : NetworkBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.gameObject.tag == "DeathBox")
+        {
+            GetComponent<TestPlayerController>().Die();
+        }
         // //this is a hack to only collide with pads
         // if (!other.gameObject.name.StartsWith("Pad"))
         //     return;

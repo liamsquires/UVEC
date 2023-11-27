@@ -47,9 +47,10 @@ public class TestPlayerController : NetworkBehaviour
     }
     
     public Action<TestPlayerController> Died;
-    
+    public NetworkObject explosionVFX;
     public void Die()
     {
+        Runner.Spawn(explosionVFX, transform.position, Quaternion.identity);
         Debug.Log("Death awaits even the slightest lapse in concentration.");
         Died?.Invoke(this);
     }

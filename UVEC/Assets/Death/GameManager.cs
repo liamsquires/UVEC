@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public List<TestPlayerController> Players;
+	public static List<TestPlayerController> Players;
 
 	private List<TestPlayerController> _deadPlayers;
 
+	public GameObject explosionVFX;
 	private void OnEnable()
 	{
 		_deadPlayers = new List<TestPlayerController>();
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
 	private void PlayerDied(TestPlayerController obj)
 	{
 		Debug.Log(obj);
+		
+		Instantiate(explosionVFX, obj.transform.position, Quaternion.identity);
+		
 		if(!_deadPlayers.Contains(obj))
 			_deadPlayers.Add(obj);
 		if (_deadPlayers.Count == Players.Count)

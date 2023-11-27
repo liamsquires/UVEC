@@ -26,7 +26,7 @@ public class PlayerSpawner : SimulationBehaviour, INetworkRunnerCallbacks
         var pObj = Runner.Spawn(PlayerPrefab, new Vector3(0,5,0), Quaternion.identity, inputAuthority:Runner.LocalPlayer);
         Runner.SetPlayerObject(Runner.LocalPlayer, pObj);
         GameState.Instance.Players[Runner.LocalPlayer] = pObj;
-        GameManager.Players.Add(pObj.GetComponent<TestPlayerController>());
+        
         //GameState.Instance.PlayersReady[Runner.LocalPlayer] = false;
     }
 

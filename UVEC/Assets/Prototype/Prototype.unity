@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cb4300d043a104babf9b37c772cc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
+  _testPlayerController: {fileID: 0}
 --- !u!114 &195061984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 1235029347}
   - component: {fileID: 1235029349}
   - component: {fileID: 1235029348}
+  - component: {fileID: 1235029350}
   m_Layer: 6
   m_Name: RedPlayer
   m_TagString: Untagged
@@ -797,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cb4300d043a104babf9b37c772cc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
+  _testPlayerController: {fileID: 0}
 --- !u!114 &1235029349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,54 +811,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a6a83fc131ab342ac748d92d8ee850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1393343303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1393343305}
-  - component: {fileID: 1393343304}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1393343304
+--- !u!114 &1235029350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393343303}
+  m_GameObject: {fileID: 1235029341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34efbf664b55c246b4203d7dc22cbf7, type: 3}
+  m_Script: {fileID: 11500000, guid: f24c6e29ab0437e42bed9aa057dbddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Players:
-  - {fileID: 195061984}
-  - {fileID: 1235029349}
-  - {fileID: 2011901624}
---- !u!4 &1393343305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393343303}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  _interpolationDataSource: 0
+  _speed: 10
+  _rotateSpeed: 50
+  _lookUpDownSpeed: 20
+  _camera: {fileID: 0}
+  camUpMax: 130
+  camDownMax: 70
 --- !u!1 &1483296318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1080,7 @@ GameObject:
   - component: {fileID: 2011901619}
   - component: {fileID: 2011901624}
   - component: {fileID: 2011901623}
+  - component: {fileID: 2011901625}
   m_Layer: 8
   m_Name: BluePlayer
   m_TagString: Untagged
@@ -1216,7 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cb4300d043a104babf9b37c772cc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
+  _testPlayerController: {fileID: 0}
 --- !u!114 &2011901624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,6 +1202,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a6a83fc131ab342ac748d92d8ee850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011901625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011901618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24c6e29ab0437e42bed9aa057dbddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _speed: 10
+  _rotateSpeed: 50
+  _lookUpDownSpeed: 20
+  _camera: {fileID: 0}
+  camUpMax: 130
+  camDownMax: 70
 --- !u!1 &2019362598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,5 +1595,4 @@ SceneRoots:
   - {fileID: 2011901622}
   - {fileID: 933550716}
   - {fileID: 666938025603606359}
-  - {fileID: 1393343305}
   - {fileID: 2031813407}
